@@ -44,7 +44,7 @@ uintptr_t GetPointer(HANDLE hProcess, uintptr_t baseAddress, int* offsets, int o
     return addr;
 }
 
-// Função para escrever valor de float na memória do jogo
+// Função para escrever valor float na memória do jogo
 BOOL WriteFloat(HANDLE hProcess, uintptr_t address, float value) {
     SIZE_T bytesWritten;
     BOOL success = WriteProcessMemory(hProcess, (LPVOID)address, &value, sizeof(value), &bytesWritten);
@@ -129,3 +129,5 @@ int main() {
     CloseHandle(hProcess);
     return 0;
 }
+
+// Teste de injeção usando API do WIndows, falha de injeção na offset 0xD8
